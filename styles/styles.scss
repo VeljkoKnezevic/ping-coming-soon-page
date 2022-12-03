@@ -1,0 +1,234 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+$black: #15202A;
+$error: #FF5466;
+$button: #4C7BF3;
+$header-and-copyright: #969696;
+
+body {
+  margin: 0;
+  font-family: 'Libre Franklin', sans-serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.main {
+  width: 80%;
+  max-width: 350px;
+  margin: 81px auto 0;
+
+  &__logo__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__header__large {
+    font-weight: 300;
+    font-size: 1.375rem;
+    line-height: 2rem;
+    text-align: center;
+    color: $header-and-copyright;
+    margin: 32px auto 15px;
+
+    &--black {
+      font-weight: 700;
+      color: $black;
+    }
+  }
+
+  &__header__small {
+    font-weight: 300;
+    font-size: 0.75rem;
+    line-height: 0.938rem;
+    text-align: center;
+    color: $black;
+    margin-bottom: 32px;
+  }
+  .main__email {
+
+
+    &__input {
+      background: #FFFFFF;
+      border: 1px solid #C2D3FF;
+      box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.0001);
+      border-radius: 28px; 
+      width: 100%;
+      padding: 10px 32px; 
+    }
+
+    &__error {
+      display: none;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.625rem;
+      line-height: 1.25rem;
+      letter-spacing: 0.125px;
+      color: $error;   
+      text-align: center;
+      margin: 0 auto;
+    }
+  
+    &__button {
+      background: $button;
+      box-shadow: 0px 5px 10px 2px rgba(76, 123, 243, 0.230414);
+      border-radius: 28px;
+      width: 100%;
+      border: none;
+      font-family: 'Libre Franklin';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.75rem;
+      line-height: 1rem;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 12px;
+      margin-top: 10px;
+    }
+  }
+
+
+
+  &__dashboard {
+    width: 320px;
+    margin: 72px auto 120px;
+
+    &__img {
+      width: 100%;
+    }
+  }
+
+
+}
+
+.dashboard {
+  width: 320px;
+  margin-bottom: 120px;
+}
+
+.footer {
+
+  &__icons {
+    display: flex;
+    justify-content: space-around;
+
+    i {
+      border: 0.918357px solid rgba(76, 123, 243, 0.15);
+      border-radius: 50%;
+      color: $button;
+    }
+
+    .fa-facebook-f {
+      padding: 8px 12px;
+    }
+
+    .fa-twitter {
+      padding: 8px 10px;
+    }
+
+    .fa-instagram {
+      padding: 8px 10px;
+    }
+  }
+
+
+  &__copyright {
+    margin-top: 30px;
+    margin-bottom: 37px;
+    font-weight: 300;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+    color: $header-and-copyright;
+  }
+}
+
+
+
+// Desktop styles
+
+@media (min-width: 750px) {
+  .main {
+    max-width: 700px;
+    margin: 80px auto 94px;
+
+
+    &__header__large {
+      margin-top: 40px;
+      margin-bottom: 16px;
+      font-size: 3rem;
+      line-height: 3.75rem;
+    }
+
+    &__header__small {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+
+    &__email {
+      display: grid;
+      width: 80%;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      margin: 0 auto;
+      align-items: start;
+      
+      &__input {
+        margin-bottom: 0;
+        flex: 2;
+        padding: 18px 30px;
+        font-size: 1rem;
+        line-height: 1.25rem;
+        grid-row: 1 / 2;
+
+      }
+
+      &__error {
+        width: 100%;
+        grid-row: 2 / 3;
+        margin-left: 30px !important;
+        text-align: left !important;
+      }
+
+      &__button {
+        flex: 1;
+        padding: 19px;
+        font-size: 1rem;
+        line-height: 1.188rem;
+        margin-top: 0px !important;
+        margin-left: 16px;
+
+
+        &:hover {
+          mix-blend-mode: normal;
+          cursor: pointer;
+          opacity: 0.8;
+        }
+      }
+    }
+
+    &__dashboard {
+      width: 640px;
+    }
+    
+  }
+
+  .footer {
+
+    i:hover {
+      background: $button;
+      color: #FFFFFF;
+    }
+
+    &__copyright {
+      font-size: 0.75rem;
+      line-height: 0.938rem;
+      margin-bottom: 50px;
+    }
+  }
+}
+
